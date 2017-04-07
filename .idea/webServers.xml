@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0523df2f-b060-44d9-bae2-6a28d634b750" name="goldenShoe" url="http://goldenShoe.nwdev.net">
+        <fileTransfer host="goldenShoe.nwdev.net" port="21" username="c11_goldenShoe">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

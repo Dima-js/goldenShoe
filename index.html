@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/btn.js"></script>
     <script>
 
         $(document).ready(function(){
@@ -23,9 +24,12 @@
                 nav: true,
                 responsive:{
                     0:{
-                        items:5
+                        items:1
                     },
-                    600:{
+                    480:{
+                        items:2
+                    },
+                    700:{
                         items:3
                     },
                     1000:{
@@ -39,6 +43,22 @@
         });
         $(document).ready(function(){
             $(".owl-carousel").owlCarousel();
+        });
+    </script>
+    <script>
+        $(document).on('click', '.multi-accordion li > a', function (event) {
+            var $this = $(this), $next = $this.next();
+            if ($next.length) {
+                if ($next.is(':visible')) {
+                    $next.slideToggle(function () {
+                        $next.find('ul').toggle(false);
+                    });
+                } else {
+                    $next.slideToggle().parent().siblings().find('ul').filter(':visible').slideToggle();
+                }
+
+                event.preventDefault();
+            }
         });
     </script>
 </head>
@@ -125,8 +145,12 @@
 <br>
 <nav class="catalog">
     <div class="container">
-
-
+        <div class="wrap_search">
+        <form method="get" action="/search/" class="search">
+            <input id="search2" name="text" type="text" placeholder="Поиск">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        </div>
         <div class="catalog_list">
             <div class="item">
                 <a href="/katalog/zhenskaia-obuv/">Главная</a>
@@ -146,6 +170,71 @@
         </div>
     </div>
 </nav>
+
+<!--media nav-->
+
+
+
+<nav>
+    <div class="wrapper">
+
+        <a href="#" id="menu-btn-toggle" class=""><span></span></a>
+        <div id="overlay"> </div>
+        <div id="myPanelDefault" >
+            <ul class="style_menu" style="display: block" >
+                <li>
+                    <a href="#" >Главная</a>
+                </li>
+                <li>
+                    <a href="#">женская обувь </a>
+                </li>
+                <li>
+                    <a href="#">мужская обувь</a>
+                </li>
+                <li>
+                    <a href="#">информация</a>
+                </li>
+                <li>
+                    <a href="#">как снять мерки</a>
+                </li>
+                <div class="wrap_podmenu">
+                    <ul>
+                        <li>
+                            <a href="#">О компании</a>
+                        </li>
+                        <li>
+                            <a href="#">Полезная информация</a>
+                        </li>
+                        <li>
+                            <a href="#">Доставка и оплата</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                        <li>
+                            <a href="#">Наши партнеры</a>
+                        </li>
+                        <li>
+                            <a href="#">Оптовикам</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wrap_menu_phon">
+                    <span>+7 (964) 774-92-95</span>
+                    <span>+7 (925) 872-05-33</span>
+                    <span>info@golden-shoe.ru</span>
+                    <span>Москва, ул. Малая Ордынка, 25</span>
+                    <span>Москва, ул. Пятницкая, 41</span>
+                </div>
+                <a href="https://vk.com/goldenshoe" target="_blank"><i class="fa fa-vk"></i></a>
+                <a href="https://www.instagram.com/golden_shoeru/" target="_blank"><i class="fa fa-instagram"></i></a>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--end media nav-->
 
 <main>
     <div class="wrap_banner_top">
@@ -586,7 +675,9 @@
 <footer>
     <div class="bottom_block">
         <div class="wrapper">
-            Салон-ателье танцевальной обуви <a href="http://golden-shoe.ru">golden-shoe.ru</a> © 2012–2017
+           <span> Салон-ателье танцевальной обуви</span>
+               <a href="http://golden-shoe.ru">golden-shoe.ru</a>
+               <span>© 2012–2017</span>
         </div>
     </div>
 </footer>
